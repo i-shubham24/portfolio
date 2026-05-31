@@ -14,17 +14,17 @@ export default function Projects() {
   const projectDetails = {
     "DermaAI": {
       liveLink: "https://your-streamlit-app-link.streamlit.app",
-      image: "./images/ai-derma-concept.png", 
+      image: "/images/ai-derma-concept.jpg", 
       description: "AI-powered skin analysis application utilizing a YOLOv8 model for computer vision-based skin detection."
     },
     "PathSeeker": {
       liveLink: "https://your-vercel-app-link.vercel.app",
-      image: "./images/ai-marketplace-concept.png",
+      image: "/images/ai-marketplace-concept.jpg",
       description: "MERN-based courses marketplace for buying tech courses and earning referral bonuses."
     },
     "Restaurant-Recommendation": {
       liveLink: "https://your-restaurant-streamlit.streamlit.app",
-      image: "./images/ai-restaurant-data.png",
+      image: "/images/ai-restaurant-data.jpg",
       description: "Streamlit-based system using KNN to suggest restaurants based on user preferences."
     }
   };
