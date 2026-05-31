@@ -1,128 +1,3 @@
-// import { useEffect, useState, useRef } from 'react';
-// import gsap from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { ExternalLink, Code } from 'lucide-react';
-// import { FiGithub } from 'react-icons/fi';
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// export default function Projects() {
-//   const [repos, setRepos] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const galleryRef = useRef(null);
-
-//   const projectDetails = {
-//     "DermaAI": {
-//       liveLink: "https://your-streamlit-app-link.streamlit.app",
-//       image: "/images/ai-derma-concept.jpg", 
-//       description: "AI-powered skin analysis application utilizing a YOLOv8 model for computer vision-based skin detection."
-//     },
-//     "PathSeeker": {
-//       liveLink: "https://your-vercel-app-link.vercel.app",
-//       image: "/images/ai-marketplace-concept.jpg",
-//       description: "MERN-based courses marketplace for buying tech courses and earning referral bonuses."
-//     },
-//     "Restaurant-Recommendation": {
-//       liveLink: "https://your-restaurant-streamlit.streamlit.app",
-//       image: "/images/ai-restaurant-data.jpg",
-//       description: "Streamlit-based system using KNN to suggest restaurants based on user preferences."
-//     }
-//   };
-
-//   useEffect(() => {
-//     fetch('https://api.github.com/users/i-shubham24/repos')
-//       .then(res => res.json())
-//       .then(data => {
-//         setRepos(data);
-//         setLoading(false);
-//       })
-//       .catch(err => {
-//         console.error("Failed to fetch repos", err);
-//         setLoading(false);
-//       });
-//   }, []);
-
-//   useEffect(() => {
-//     if (!loading && repos.length > 0) {
-//       gsap.fromTo('.project-card', 
-//         { y: 50, opacity: 0 },
-//         { 
-//           y: 0, 
-//           opacity: 1, 
-//           duration: 0.6, 
-//           stagger: 0.1,
-//           ease: 'power2.out',
-//           scrollTrigger: {
-//             trigger: galleryRef.current,
-//             start: "top 85%",
-//           }
-//         }
-//       );
-//     }
-//   }, [loading, repos]);
-
-//   return (
-//     <div className="min-h-screen pt-28 px-4 pb-16">
-//       <div className="max-w-6xl mx-auto" ref={galleryRef}>
-//         <div className="text-center mb-16">
-//           <h2 className="text-4xl md:text-5xl font-bold text-violet-900 mb-4">Featured Projects</h2>
-//           <p className="text-violet-600 text-lg max-w-2xl mx-auto">
-//             A collection of my recent work in MERN stack development, machine learning, and data science. Pulled directly from GitHub.
-//           </p>
-//         </div>
-        
-//         {loading ? (
-//           <div className="flex justify-center items-center h-64 text-violet-500 animate-pulse">
-//             <Code size={48} />
-//           </div>
-//         ) : (
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-//             {repos.map((repo) => {
-//                const customDetails = projectDetails[repo.name] || {};
-               
-//                return (
-//                 <div key={repo.id} className="project-card bg-white rounded-2xl shadow-lg shadow-violet-100/50 overflow-hidden hover:shadow-2xl hover:shadow-violet-200 transition-all duration-300 flex flex-col h-full border border-violet-50">
-                  
-//                   <div className="h-48 bg-violet-100 relative group overflow-hidden">
-//                     {customDetails.image ? (
-//                        <img src={customDetails.image} alt={repo.name} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
-//                     ) : (
-//                        <div className="flex flex-col items-center justify-center h-full text-violet-400 bg-gradient-to-br from-violet-50 to-fuchsia-50">
-//                           <Code size={40} className="mb-2 opacity-50" />
-//                           <span className="text-sm font-medium">Auto-generated</span>
-//                        </div>
-//                     )}
-//                   </div>
-                  
-//                   <div className="p-6 flex flex-col flex-grow">
-//                     <h3 className="text-xl font-bold text-violet-900 mb-2 truncate" title={repo.name}>
-//                       {repo.name}
-//                     </h3>
-//                     <p className="text-violet-600 mb-6 text-sm flex-grow line-clamp-3">
-//                       {customDetails.description || repo.description || "No description provided."}
-//                     </p>
-                    
-//                     <div className="flex justify-between items-center mt-auto pt-4 border-t border-violet-50">
-//                       <a href={repo.html_url} target="_blank" rel="noreferrer" className="flex items-center gap-1 text-sm text-violet-500 hover:text-violet-800 font-semibold transition-colors">
-//                         <FiGithub size={16}/> Code
-//                       </a>
-//                       {customDetails.liveLink && (
-//                         <a href={customDetails.liveLink} target="_blank" rel="noreferrer" className="flex items-center gap-1 text-sm bg-violet-100 text-violet-700 px-4 py-1.5 rounded-full hover:bg-violet-200 font-semibold transition-colors">
-//                           <ExternalLink size={16}/> Live
-//                         </a>
-//                       )}
-//                     </div>
-//                   </div>
-//                 </div>
-//               );
-//             })}
-//           </div>
-//         )}
-//       </div>
-//     </div>
-//   );
-// }
-
 import { useEffect, useState, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -139,17 +14,17 @@ export default function Projects() {
   const projectDetails = {
     "DermaAI": {
       liveLink: "https://your-streamlit-app-link.streamlit.app",
-      image: "/images/ai-derma-concept.jpg", 
+      image: "./images/ai-derma-concept.png", 
       description: "AI-powered skin analysis application utilizing a YOLOv8 model for computer vision-based skin detection."
     },
     "PathSeeker": {
       liveLink: "https://your-vercel-app-link.vercel.app",
-      image: "/images/ai-marketplace-concept.jpg",
+      image: "./images/ai-marketplace-concept.png",
       description: "MERN-based courses marketplace for buying tech courses and earning referral bonuses."
     },
     "Restaurant-Recommendation": {
       liveLink: "https://your-restaurant-streamlit.streamlit.app",
-      image: "/images/ai-restaurant-data.jpg",
+      image: "./images/ai-restaurant-data.png",
       description: "Streamlit-based system using KNN to suggest restaurants based on user preferences."
     }
   };
