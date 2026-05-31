@@ -2,6 +2,9 @@ import { useEffect, useState, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ExternalLink, Code } from 'lucide-react';
+import dermaImg from '../assets/images/ai-derma-concept.png';
+import marketplaceImg from '../assets/images/ai-marketplace-concept.png';
+import restaurantImg from '../assets/images/ai-restaurant-data.png';
 import { FiGithub } from 'react-icons/fi';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,17 +17,17 @@ export default function Projects() {
   const projectDetails = {
     "DermaAI": {
       liveLink: "https://your-streamlit-app-link.streamlit.app",
-      image: "/images/ai-derma-concept.jpg", 
+      image: dermaImg, 
       description: "AI-powered skin analysis application utilizing a YOLOv8 model for computer vision-based skin detection."
     },
     "PathSeeker": {
       liveLink: "https://your-vercel-app-link.vercel.app",
-      image: "/images/ai-marketplace-concept.jpg",
+      image: marketplaceImg,
       description: "MERN-based courses marketplace for buying tech courses and earning referral bonuses."
     },
     "Restaurant-Recommendation": {
       liveLink: "https://your-restaurant-streamlit.streamlit.app",
-      image: "/images/ai-restaurant-data.jpg",
+      image: restaurantImg,
       description: "Streamlit-based system using KNN to suggest restaurants based on user preferences."
     }
   };
