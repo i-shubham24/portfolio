@@ -1,32 +1,48 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import AnimatedBackground from './components/AnimatedBackground';
+import Marquee from './components/Marquee';
+
+// Import your pages as sections now
 import Home from './pages/Home';
 import Projects from './pages/Projects';
-import About from './pages/About';
 import Skills from './pages/Skills';
+import About from './pages/About';
 
 function App() {
   return (
-    <Router>
+    <>
       <CustomCursor />
       <AnimatedBackground />
       
-      <div className="flex flex-col min-h-screen bg-violet-50 text-violet-900 dark:bg-gray-950 dark:text-gray-100 font-sans selection:bg-violet-300 dark:selection:bg-violet-700 transition-colors duration-500 relative z-10">
+      <div className="flex flex-col min-h-screen font-sans selection:bg-violet-300 dark:selection:bg-violet-700 transition-colors duration-500 relative z-10 text-violet-900 dark:text-gray-100">
         <Header />
+        
         <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
+          <section id="home">
+            <Home />
+          </section>
+
+          <Marquee text="MERN STACK • MACHINE LEARNING • FULL STACK DEV • AI ENGINEER" />
+
+          <section id="projects">
+            <Projects />
+          </section>
+
+          <Marquee text="REACT • NODEJS • PYTHON • YOLOV8 • TAILWIND CSS" direction={1} />
+
+          <section id="skills">
+            <Skills />
+          </section>
+
+          <section id="about">
+            <About />
+          </section>
         </main>
         <Footer />
       </div>
-    </Router>
+    </>
   );
 }
 

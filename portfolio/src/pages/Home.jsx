@@ -3,11 +3,9 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { Download, ArrowRight } from 'lucide-react';
 import { FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
 
 export default function Home() {
   const container = useRef(null);
-
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
@@ -33,12 +31,12 @@ export default function Home() {
           >
             <Download size={20} /> Download Resume
           </a>
-          <Link 
-            to="/projects" 
+          <a 
+            href="#projects" 
             className="flex items-center gap-2 bg-white dark:bg-gray-900 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-gray-700 px-8 py-4 rounded-full font-semibold hover:bg-violet-50 dark:hover:bg-gray-800 transition-all shadow-sm hover:-translate-y-1 w-full sm:w-auto justify-center"
           >
             View Work <ArrowRight size={20} />
-          </Link>
+          </a>
         </div>
 
         <div className="flex justify-center gap-6">
