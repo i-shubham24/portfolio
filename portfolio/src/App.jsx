@@ -1,3 +1,5 @@
+import { ReactLenis } from 'lenis/react';
+import SolidScrollShapes from './components/SolidScrollShapes';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
@@ -13,8 +15,10 @@ import About from './pages/About';
 function App() {
   return (
     <>
+    <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothTouch: true }}></ReactLenis>
       <CustomCursor />
       <AnimatedBackground />
+      <SolidScrollShapes />
       
       <div className="flex flex-col min-h-screen font-sans selection:bg-violet-300 dark:selection:bg-violet-700 transition-colors duration-500 relative z-10 text-violet-900 dark:text-gray-100">
         <Header />
@@ -42,6 +46,7 @@ function App() {
         </main>
         <Footer />
       </div>
+      <ReactLenis />
     </>
   );
 }
