@@ -9,6 +9,7 @@ import CustomCursor from './components/CustomCursor';
 import AnimatedBackground from './components/AnimatedBackground';
 import SolidScrollShapes from './components/SolidScrollShapes';
 import Marquee from './components/Marquee';
+import RecruiterPing from './components/RecruiterPing';
 
 import Preloader from './components/Preloader';
 import ScrollRing from './components/ScrollRing';
@@ -62,6 +63,7 @@ function App() {
             <Marquee text="REACT • NODEJS • PYTHON • YOLOV8 • TAILWIND CSS" direction={1} />
             <section id="skills"><Skills /></section>
             <section id="about"><About /></section>
+            <RecruiterPing />
           </main>
 
           <Footer />
