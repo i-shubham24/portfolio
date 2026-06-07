@@ -14,7 +14,6 @@ export default function RecruiterPing() {
     setStatus('sending');
 
     try {
-      // THE WEB3FORMS API CALL
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
@@ -22,7 +21,6 @@ export default function RecruiterPing() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          // ⚠️ REPLACE THIS WITH THE KEY YOU GOT IN YOUR EMAIL
           access_key: "b7c19887-4b57-46bc-a429-4c7f37a85b06", 
           subject: "New Contact Ping from AI Portfolio",
           from_name: "Portfolio Terminal",
