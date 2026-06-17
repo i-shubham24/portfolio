@@ -8,12 +8,12 @@ export default function NeuralNetworkBg() {
     const ctx = canvas.getContext('2d');
     let animationFrameId;
     let particles = [];
-    
+
     // Configuration
     const particleCount = window.innerWidth < 768 ? 40 : 80; // Less nodes on mobile for performance
     const connectDistance = 150; // How close nodes need to be to connect to each other
     const mouseConnectDistance = 200; // How close the mouse needs to be to snap to a node
-    
+
     let mouse = { x: null, y: null };
 
     // Resize canvas to perfectly fit screen
@@ -30,7 +30,7 @@ export default function NeuralNetworkBg() {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
     };
-    
+
     // Release mouse connections when leaving the window
     const handleMouseLeave = () => {
       mouse.x = null;
@@ -75,11 +75,11 @@ export default function NeuralNetworkBg() {
     // The Animation Loop
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       const isDark = document.documentElement.classList.contains('dark');
       const baseOpacity = isDark ? 0.3 : 0.15;
       const mouseOpacity = isDark ? 0.6 : 0.4;
-      
+
       for (let i = 0; i < particles.length; i++) {
         particles[i].update();
         particles[i].draw();
@@ -112,15 +112,15 @@ export default function NeuralNetworkBg() {
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(mouse.x, mouse.y);
             const opacity = (1 - (distance / mouseConnectDistance)) * mouseOpacity;
-            
+
             // Mouse connections glow Fuchsia to stand out
-            ctx.strokeStyle = `rgba(217, 70, 239, ${opacity})`; 
+            ctx.strokeStyle = `rgba(217, 70, 239, ${opacity})`;
             ctx.lineWidth = 1.5;
             ctx.stroke();
           }
         }
       }
-      
+
       animationFrameId = requestAnimationFrame(animate);
     };
 
@@ -136,9 +136,10 @@ export default function NeuralNetworkBg() {
   }, []);
 
   return (
+    // Find this line in NeuralNetworkBg.jsx
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 z-0 pointer-events-none mix-blend-screen dark:mix-blend-plus-lighter opacity-70 dark:opacity-100"
+      className="fixed inset-0 z-[-1] pointer-events-none mix-blend-screen dark:mix-blend-plus-lighter opacity-70 dark:opacity-100"
     />
   );
 }

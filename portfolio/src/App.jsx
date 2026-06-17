@@ -3,7 +3,7 @@ import { ReactLenis } from 'lenis/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import Header from './components/Header';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import AnimatedBackground from './components/AnimatedBackground';
@@ -54,7 +54,7 @@ function App() {
         
         <div className={`flex flex-col min-h-screen font-sans selection:bg-violet-300 dark:selection:bg-violet-700 transition-colors duration-500 relative z-10 text-violet-900 dark:text-gray-100 ${!loadingComplete ? 'opacity-0 h-screen overflow-hidden' : 'opacity-100'}`}>
           
-          <Header />
+          <Navbar />
           
           <main className="flex-grow">
             <section id="home"><Home /></section>
